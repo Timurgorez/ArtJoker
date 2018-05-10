@@ -69,8 +69,7 @@ class Room extends React.Component {
         }
         const styleNumberField ={
             "width": 100,
-            "color":"red",
-            "margin-left": 30
+            "marginLeft": 30
         }
         return(
             <div key={this.props.keys} className="body-dialog">
