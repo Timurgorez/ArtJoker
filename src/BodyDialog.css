@@ -1,0 +1,12 @@
+.body-dialog {
+  display: flex;
+  align-items: flex-end; }
+  .body-dialog i {
+    margin-left: 30px;
+    padding: 5px;
+    background: #FBE6E9;
+    border-radius: 50%;
+    cursor: pointer;
+    color: red; }
+  .body-dialog i:hover {
+    background: #FB5E68; }

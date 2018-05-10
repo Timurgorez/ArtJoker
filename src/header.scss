@@ -1,0 +1,40 @@
+.dialog-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  background: #F0F0F0;
+  i{
+    cursor: pointer;
+    align-self: center;
+    padding: 5px;
+    &:active{
+      color: red;
+    }
+    &:hover{
+      background: #FBE6E9;
+      border-radius: 50%;
+    }
+  }
+}
+.wrapper-for-booking-btn{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center ;
+}
+
+.footer-dialog{
+  text-align: left !important;
+  padding: 0 20px 20px 20px !important;
+}
+.content{
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  min-width: 250px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+.table-header{
+  th:first-child{
+    width: 0 !important;
+  }
+}
