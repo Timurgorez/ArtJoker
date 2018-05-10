@@ -50,14 +50,20 @@ class Header extends React.Component {
         this.setState({disable: false});
     }
     saveNumber = () => {
-        this.setState({open: false});
+
         // переносим данные в таблицу
         let arr0 = [];
         let arr1 = [];
         for(let i=0; i<=6; ++i) {
             if (document.getElementById('number-field' + i)) {
+                if(document.getElementById('number-field' + i).value === ""){
+                    alert("Заполните все поля");
+                    this.setState({open: true});
+                    return false;
+                }
                 arr0.splice(i, 0, document.getElementById('number-field'+i).value);
                 arr1.splice(i, 0, document.getElementById('select-field'+i).textContent);
+                this.setState({open: false});
             }else{
                 break;
             }
@@ -84,9 +90,6 @@ class Header extends React.Component {
 
     render() {
         const styleHeader = {
-            //"display": "none"
-            //"position" : "absolute",
-            //"justify-content": "flex-start",
             "left": -50
         }
         const styleDialog ={
@@ -98,7 +101,6 @@ class Header extends React.Component {
             <RaisedButton
                 label="Сохранить"
                 primary={true}
-                //disabled={this.state.disabled}
                 onClick={this.saveNumber}
             />,
             <FlatButton
@@ -145,7 +147,7 @@ class Header extends React.Component {
                         >
                             { this.state.arrRoom.map((el, index) => {
                                 return (
-                                    <TableContent  arrRoom={el} key={index} keys={index} deleteItem={this.deleteItem.bind(this, index)} />
+                                    <TableContent arrRoom={el} key={index} keys={index} deleteItem={this.deleteItem.bind(this, index)} />
                                 )
                             })}
                         </TableBody>
